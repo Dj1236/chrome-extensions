@@ -1,95 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Youtube Transcript Summarizer</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 50px;
-            background: linear-gradient(-45deg, #0C0C0C, #2C1654, #4834D4, #2C1654, #0C0C0C);
-            background-size: 400% 400%;
-            animation: gradientBackground 15s ease infinite;
-        }
-
-        @keyframes gradientBackground {
-            0% {
-                background-position: 0% 50%;
+    <head>
+        <title>Youtube Transcript Summariser</title>
+        <style>
+            h1 {
+                text-align: center;
             }
-            50% {
-                background-position: 100% 50%;
+            body {
+                width: max-content;
+                max-width: 800px;
             }
-            100% {
-                background-position: 0% 50%;
+            button {
+                background-color: red;
+                color: white;
+                border-radius: 8px;
+                width: max-content;
+                height: max-content;
+                padding: 10px;
+                font-size: large;
+                margin: auto;
+                display: block;
+                border-color: coral;
             }
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
-        button {
-            background-color: #dc3545;
-            color: #fff;
-            border: 2px solid #fff; /* Updated border style */
-            border-radius: 30px; /* Increased border radius for a rounded look */
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #c82333;
-        }
-
-        #output {
-            font-size: 16px;
-            color: #fff;
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-            height: 20px; /* Set initial height */
-        }
-
-        .output {
-            display: none;
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
+            button[disabled] {
+                background-color: lightcoral;
+                color: white;
+                border-radius: 8px;
+                width: max-content;
+                height: max-content;
+                padding: 10px;
+                font-size: large;
+                margin: auto;
+                display: block;
+                border-color: lightpink;
             }
-            to {
-                opacity: 1;
+            p {
+                font-size: medium;
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Youtube Transcript Summarizer</h1>
-        <button id="summarise" type="button">Summarize</button>
-        <div id="output" class="output"></div>
-    </div>
-
-    <script>
-        document.getElementById("summaries").addEventListener("click", function() {
-            document.getElementById("output").innerHTML = "Summarizing...";
-            document.getElementById("output").style.display = "block";
-            // Your summarization logic here
-        });
-    </script>
-</body>
+        </style>
+    </head>
+    <body>
+        <h1>Youtube Transcript Summariser</h1>
+        <button id="summarise" type="button">Summarise</button>
+        <br/>
+        <p id="output"></p>
+        <script src="popup.js"></script>
+    </body>
 </html>

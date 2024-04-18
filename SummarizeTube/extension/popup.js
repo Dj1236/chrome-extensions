@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("Summaries");
+  const btn = document.getElementById("summarise");
   btn.addEventListener("click", function () {
     btn.disabled = true;
     btn.innerHTML = "Summarizing...";
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const p = document.getElementById("output");
         p.innerHTML = text;
         btn.disabled = false;
-        btn.innerHTML = "Summaries";
+        btn.innerHTML = "summarise";
       };
       xhr.send();
     });

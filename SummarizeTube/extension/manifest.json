@@ -16,6 +16,7 @@
         },
         "default_popup": "popup.html"
     },
+    
 
     "icons": {
         "16": "images/icon.png",
