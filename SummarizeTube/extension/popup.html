@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Youtube Transcript Summariser</title>
-        <style>
-            h1 {
-                text-align: center;
-            }
-            body {
-                width: max-content;
-                max-width: 800px;
-            }
-            button {
-                background-color: red;
-                color: white;
-                border-radius: 8px;
-                width: max-content;
-                height: max-content;
-                padding: 10px;
-                font-size: large;
-                margin: auto;
-                display: block;
-                border-color: coral;
-            }
-            button[disabled] {
-                background-color: lightcoral;
-                color: white;
-                border-radius: 8px;
-                width: max-content;
-                height: max-content;
-                padding: 10px;
-                font-size: large;
-                margin: auto;
-                display: block;
-                border-color: lightpink;
-            }
-            p {
-                font-size: medium;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Youtube Transcript Summariser</h1>
-        <button id="summarise" type="button">Summarise</button>
-        <br/>
-        <p id="output"></p>
-        <script src="popup.js"></script>
-    </body>
+<head>
+    <title>Youtube Transcript Summariser</title>
+    <style>
+        /* Styling for the button */
+        button {
+            background-color: #ff5757; /* Red color */
+            color: #fff; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 12px 24px; /* Padding for better spacing */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+            outline: none; /* Remove default outline */
+        }
+
+        /* Styling for the button on hover */
+        button:hover {
+            background-color: #ff3c3c; /* Darker red on hover */
+            transform: scale(1.05); /* Scale up slightly on hover */
+        }
+
+        /* Styling for the disabled button */
+        button[disabled] {
+            background-color: #ff8989; /* Lighter red for disabled state */
+            cursor: not-allowed; /* Not allowed cursor for disabled state */
+        }
+
+        /* Styling for the output text */
+        p {
+            font-size: 16px; /* Font size */
+            margin-top: 20px; /* Margin from the top */
+            text-align: center; /* Center align text */
+            color: #333; /* Dark text color */
+        }
+         /* Hide the summary label by default */
+        .summary-label {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Youtube Transcript Summariser</h1>
+    <!-- Button with id "summarise" -->
+    <button id="summarise" type="button">Summarise</button>
+    <br>
+    <!-- Paragraph element with id "output" for displaying summary -->
+    <h2 class="summary-label">Summary:</h2>
+    <p id="output"></p>
+    
+    <!-- External JavaScript file -->
+    <script src="popup.js"></script>
+</body>
 </html>

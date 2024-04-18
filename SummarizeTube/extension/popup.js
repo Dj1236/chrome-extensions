@@ -18,6 +18,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+// Function to simulate getting summary data
+function getSummary() {
+    // Simulate getting summary data from somewhere
+    return "This is the summary text.";
+}
+
+// Function to display summary
+function displaySummary() {
+    // Get the output element
+    var outputElement = document.getElementById("output");
+    // Get the summary label element
+    var summaryLabel = document.querySelector(".summary-label");
+
+    // Get summary data
+    var summaryData = getSummary();
+
+    // Update the output element with the summary data
+    outputElement.textContent = summaryData;
+    // Show the summary label
+    summaryLabel.style.display = "block";
+}
+
+// Add click event listener to the button
+document.getElementById("summarise").addEventListener("click", displaySummary);
+
 
 // const btn = document.getElementById("summarize");
 // btn.addEventListener("click", function() {
