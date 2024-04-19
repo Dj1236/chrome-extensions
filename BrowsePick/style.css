@@ -1,73 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-.container{
-    background-color: #fff;
+.container {
+    background-color: #f0f0f0; /* Light grey background */
     width: 350px;
 }
 
-.container :where(.picker,header, .all-colors){
+.container :where(.picker, header, .all-colors) {
     display: flex;
     align-items: center;
 }
+
 .container .picker {
     padding: 35px 0;
-    background-color: #bd7bff;
+    background-color: #3498db; /* Button color: Blue */
     justify-content: center;
 }
-.picker #picker-btn{
-    margin-right: 10px;
-}
-.picker #picker-btn, .picker #export-btn{
-    border: none;
+
+.picker #picker-btn,
+.picker #export-btn {
+    border: 3px solid;
+    border-image: linear-gradient(45deg, #fd5e53, #f5b461, #8cff98, #60a5fa, #ff6bcb); /* Gradient border */
+    border-image-slice: 1; /* Ensure the border-image covers the entire border */
     outline: none;
     color: #fff;
     cursor: pointer;
     font-size: 1rem;
     padding: 10px 15px;
-    background-color: #8000ff;
-    transition: all 0.3s ease;
-}
-.picker #picker-btn:hover, .picker #export-btn:hover{
-    background-color: #4c0099;
-}
-.color-list{
-    margin: 10px 15px;
-}
-.color-list header{
-    justify-content: space-between;
-}
-header .title{
-    font-size: 1rem;
-}
-header #clear-btn{
-    font-size: 0.9rem;
-    cursor: pointer;
-    color: #bd7bff;
+    background-color: #2c3e50; /* Button background: Dark blue */
+    transition: background-color 0.3s ease; /* Adding transition for color change */
 }
 
-header #clear-btn:hover{
-    color: #8500d2;
+.picker #picker-btn:hover,
+.picker #export-btn:hover {
+    background-color: #34495e; /* Darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.color-list .all-colors{
+
+.color-list {
+    margin: 10px 15px;
+}
+
+.color-list header {
+    justify-content: space-between;
+}
+
+header .title {
+    font-size: 1rem;
+}
+
+header #clear-btn {
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #3498db; /* Clear button color: Blue */
+}
+
+header #clear-btn:hover {
+    color: #2980b9; /* Darker blue on hover */
+}
+
+.color-list .all-colors {
     flex-wrap: wrap;
     list-style: none;
     margin: 10px 0 0;
 }
-.color-list.hide{
+
+.color-list.hide {
     display: none;
 }
-.all-colors .color{
+
+.all-colors .color {
     display: flex;
     cursor: pointer;
     margin-bottom: 10px;
     width: calc(100% / 3);
 }
+
 .all-colors .rect {
     height: 22px;
     width: 22px;
@@ -75,58 +90,65 @@ header #clear-btn:hover{
     margin-right: 3px;
     border-radius: 3px;
 }
-.all-colors .color span{
+
+.all-colors .color span {
     font-size: 0.86rem;
     font-weight: 500;
     text-transform: uppercase;
 }
-.color-popup{
+
+.color-popup {
     position: fixed;
     top: 52px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 300px;
-    background-color: #ffff;
+    background-color: #fff; /* Popup background: White */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0 ,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 9999;
 }
-.color-popup-content{
+
+.color-popup-content {
     padding: 20px;
 }
-.color-info{
+
+.color-info {
     display: flex;
     align-items: center;
 }
-.color-preview{
+
+.color-preview {
     width: 50px;
     height: 50px;
     border-radius: 5px;
     margin-right: 10px;
 }
-.color-details{
+
+.color-details {
     flex-grow: 1;
 }
-.color-value{
+
+.color-value {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-
 }
 
-.label{
+.label {
     font-weight: bold;
     margin-right: 5px;
 }
 
-.value{
+.value {
     cursor: pointer;
 }
-span.close-popup{
+
+span.close-popup {
     font-size: 19px;
     cursor: pointer;
     float: right;
-    background-color: red;
+    background-color: #e74c3c; /* Close button color: Red */
     color: #fff;
     border-radius: 50%;
     width: 22px;
